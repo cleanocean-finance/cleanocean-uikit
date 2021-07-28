@@ -2846,9 +2846,9 @@ var templateObject_1$M;
 
 var baseColors = {
     failure: "#F72B50",
-    primary: "#278CC7",
+    primary: "#97C2E1",
     primaryBright: "#62bbef",
-    primaryDark: "#278CC7",
+    primaryDark: "#97C2E1",
     secondary: "#7645D9",
     success: "#68CF29",
     warning: "#FFAB2D",
@@ -2859,7 +2859,7 @@ var brandColors = {
 var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", inputBorder: "#cccccc", tertiary: "#EFF4F5", text: "#452A7A", textDisabled: "#BDC2C4", textSubtle: "#278CC7", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#e9f1fd", background: "#c0d6e8", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#0a0e17", input: "#483f3b", inputBorder: "#cccccc", primaryDark: "#278CC7", tertiary: "#2d2f37", text: "#000000", textDisabled: "#666171", textSubtle: "#000000", borderColor: "#524B63", card: "#B2BDCC", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#e9f1fd", background: "#c0d6e8", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#a5a3a3", input: "#a5a3a3", inputBorder: "#cccccc", primaryDark: "#278CC7", tertiary: "#2d2f37", text: "#000000", textDisabled: "#666171", textSubtle: "#000000", borderColor: "#524B63", card: "#B2BDCC", gradients: {
         bubblegum: "linear-gradient(139.73deg, #1f606f 0%, #164865 100%)",
     } });
 
@@ -2964,7 +2964,8 @@ var light$2 = {
     dropShadow: "drop-shadow(0px 1px 4px rgba(25, 19, 38, 0.15))",
 };
 var dark$2 = {
-    background: darkColors.card,
+    // background: darkColors.card,
+    background: '#E2E2E2',
     boxShadow: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
     boxShadowActive: shadows.active,
     boxShadowSuccess: shadows.success,
