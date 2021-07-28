@@ -9,19 +9,20 @@ interface Props {
   account?: string;
   login: Login;
   logout: () => void;
+  showMenu: boolean;
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{showMenu: boolean}>`
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: ${({showMenu}) => showMenu ? `${MENU_HEIGHT + 20}px` : "20px"};
 `
 
-const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
+const UserBlock: React.FC<Props> = ({ account, login, logout, showMenu }) => {
   const { onPresentConnectModal, onPresentAccountModal } = useWalletModal(login, logout, account);
   const accountEllipsis = account ? `${account.substring(0, 4)}...${account.substring(account.length - 4)}` : null;
   return (
-    <Wrapper>
+    <Wrapper showMenu={showMenu}>
       {account ? (
         <Button
           size="sm"

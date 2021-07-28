@@ -4,6 +4,7 @@ interface Props {
     account?: string;
     login: Login;
     logout: () => void;
+    showMenu: boolean;
 }
 declare const UserBlock: React.FC<Props>;
 export default UserBlock;

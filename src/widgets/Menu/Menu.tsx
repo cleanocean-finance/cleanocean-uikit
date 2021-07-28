@@ -41,6 +41,10 @@ const NavWrapper = styled.div`
   align-items: center;
   padding-left: 8px;
   padding-right: 16px;
+
+  ${({ theme }) => theme.mediaQueries.nav} {
+    padding-left: 22px;
+  }
 `
 
 const BodyWrapper = styled.div`
@@ -129,7 +133,7 @@ const Menu: React.FC<NavProps> = ({
           />
           <HeaderMenu isPushed={isPushed} links={links} />
           <Flex>
-            <PanelFooter 
+            <PanelFooter
               showOnNav
               isPushed={isPushed}
               isDark={isDark}
@@ -160,7 +164,7 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         />
-        <UserBlock account={account} login={login} logout={logout} />
+        <UserBlock account={account} login={login} logout={logout} showMenu={showMenu} />
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
         </Inner>
