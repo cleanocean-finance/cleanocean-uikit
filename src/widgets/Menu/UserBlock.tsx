@@ -16,6 +16,7 @@ const Wrapper = styled.div<{showMenu: boolean}>`
   position: absolute;
   right: 20px;
   top: ${({showMenu}) => showMenu ? `${MENU_HEIGHT + 20}px` : "20px"};
+  z-index: 100;
 `
 
 const UserBlock: React.FC<Props> = ({ account, login, logout, showMenu }) => {

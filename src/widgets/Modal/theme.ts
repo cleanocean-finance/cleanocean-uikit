@@ -6,5 +6,6 @@ export const light: ModalTheme = {
 };
 
 export const dark: ModalTheme = {
-  background: darkColors.card,
+  // background: darkColors.card,
+  background: '#E2E2E2'
 };

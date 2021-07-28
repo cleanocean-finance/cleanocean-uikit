@@ -2626,7 +2626,7 @@ var useWalletModal = function (login, logout, account) {
     return { onPresentConnectModal: onPresentConnectModal, onPresentAccountModal: onPresentAccountModal };
 };
 
-var Wrapper$1 = styled__default['default'].div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: absolute;\n  right: 20px;\n  top: ", ";\n"], ["\n  position: absolute;\n  right: 20px;\n  top: ", ";\n"])), function (_a) {
+var Wrapper$1 = styled__default['default'].div(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  position: absolute;\n  right: 20px;\n  top: ", ";\n  z-index: 100;\n"], ["\n  position: absolute;\n  right: 20px;\n  top: ", ";\n  z-index: 100;\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return showMenu ? MENU_HEIGHT + 20 + "px" : "20px";
 });
@@ -3014,7 +3014,8 @@ var light$6 = {
     background: lightColors.card,
 };
 var dark$6 = {
-    background: darkColors.card,
+    // background: darkColors.card,
+    background: '#E2E2E2'
 };
 
 var darkTheme = __assign(__assign({}, base), { isDark: true, alert: dark, button: dark$1, colors: darkColors, card: dark$2, toggle: dark$4, nav: dark$5, modal: dark$6, radio: dark$3 });
