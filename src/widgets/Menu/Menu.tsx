@@ -130,7 +130,7 @@ const Menu: React.FC<NavProps> = ({
           <HeaderMenu isPushed={isPushed} links={links} />
           <Flex>
             <PanelFooter 
-              hideBorder
+              showOnNav
               isPushed={isPushed}
               isDark={isDark}
               toggleTheme={toggleTheme}

@@ -14,18 +14,18 @@ import { socials, MENU_ENTRY_HEIGHT } from "./config";
 import { PanelProps, PushedProps } from "./types";
 
 interface Props extends PanelProps, PushedProps {
-  hideBorder?: boolean
+  showOnNav?: boolean
 }
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 const { MoonIcon, SunIcon, LanguageIcon } = Icons;
 
-const Container = styled.div<{ hideBorder?: boolean }>`
+const Container = styled.div<{ showOnNav?: boolean }>`
   flex: none;
   padding: 8px 4px;
-  width: ${({ hideBorder }) => hideBorder ? "200px" : "100%"};
-  background-color: ${({ hideBorder, theme }) => hideBorder ? "none" : theme.nav.background};
-  border-top: ${({ hideBorder }) => hideBorder ? "none" : "solid 2px rgba(133, 133, 133, 0.1)"};
+  width: ${({ showOnNav }) => showOnNav ? "200px" : "100%"};
+  background-color: ${({ showOnNav, theme }) => showOnNav ? "none" : theme.nav.background};
+  border-top: ${({ showOnNav }) => showOnNav ? "none" : "solid 2px rgba(133, 133, 133, 0.1)"};
 
   ${({ theme }) => theme.mediaQueries.nav} {
     padding: 0;
@@ -54,14 +54,22 @@ const SocialEntry = styled.div`
   padding: 0 16px;
 `;
 
+const SocialWrapper = styled(Flex)`
+  display: none;
+
+  ${({ theme }) => theme.mediaQueries.nav} {
+    display: flex;
+  }
+`
+
 const PanelFooter: React.FC<Props> = ({
   isPushed,
   pushNav,
   cakePriceUsd,
   priceLink,
-  hideBorder
+  showOnNav
 }) => {
-  if (!isPushed && !hideBorder) {
+  if (!isPushed && !showOnNav) {
     return (
       <Container>
         <IconButton variant="text" onClick={() => pushNav(true)}>
@@ -72,7 +80,7 @@ const PanelFooter: React.FC<Props> = ({
   }
 
   return (
-    <Container hideBorder>
+    <Container showOnNav={showOnNav}>
       <SocialEntry>
         {cakePriceUsd ? (
           <PriceLink href={priceLink} target="_blank">
@@ -82,7 +90,7 @@ const PanelFooter: React.FC<Props> = ({
         ) : (
           <Skeleton width={80} height={24} />
         )}
-        <Flex>
+        <SocialWrapper>
           {socials.map((social, index) => {
             const Icon = Icons[social.icon];
             const iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
@@ -93,7 +101,7 @@ const PanelFooter: React.FC<Props> = ({
               </Link>
             );
           })}
-        </Flex>
+        </SocialWrapper>
       </SocialEntry>
     </Container>
   );
