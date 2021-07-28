@@ -23,13 +23,14 @@ const { MoonIcon, SunIcon, LanguageIcon } = Icons;
 const Container = styled.div<{ showOnNav?: boolean }>`
   flex: none;
   padding: 8px 4px;
-  width: ${({ showOnNav }) => showOnNav ? "200px" : "100%"};
+  width: 100%;
   background-color: ${({ showOnNav, theme }) => showOnNav ? "none" : theme.nav.background};
   border-top: ${({ showOnNav }) => showOnNav ? "none" : "solid 2px rgba(133, 133, 133, 0.1)"};
 
   ${({ theme }) => theme.mediaQueries.nav} {
     padding: 0;
     overflow-x: hidden;
+    width: 200px;
   }
 `;
 
@@ -54,8 +55,8 @@ const SocialEntry = styled.div`
   padding: 0 16px;
 `;
 
-const SocialWrapper = styled(Flex)`
-  display: none;
+const SocialWrapper = styled(Flex)<{showOnNav?: boolean}>`
+  display: ${({showOnNav}) => showOnNav ? "none" : "flex"};
 
   ${({ theme }) => theme.mediaQueries.nav} {
     display: flex;
@@ -90,7 +91,7 @@ const PanelFooter: React.FC<Props> = ({
         ) : (
           <Skeleton width={80} height={24} />
         )}
-        <SocialWrapper>
+        <SocialWrapper showOnNav={showOnNav}>
           {socials.map((social, index) => {
             const Icon = Icons[social.icon];
             const iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
