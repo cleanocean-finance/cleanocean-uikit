@@ -11,6 +11,7 @@ import { NavProps } from "./types";
 import { MENU_HEIGHT } from "./config";
 import Avatar from "./Avatar";
 import HeaderMenu from "./HeaderMenu";
+import PanelFooter from "./PanelFooter";
 
 const Wrapper = styled.div`
   position: relative;
@@ -22,11 +23,6 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   top: ${({ showMenu }) => (showMenu ? 0 : `-${MENU_HEIGHT}px`)};
   left: 0;
   transition: top 0.2s;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 8px;
-  padding-right: 16px;
   width: 100%;
   height: ${MENU_HEIGHT}px;
   background-color: ${({ theme }) => theme.nav.background};
@@ -37,7 +33,13 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
 
 const NavWrapper = styled.div`
   max-width: 1600px;
+  width: 100%;
   margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 16px;
 `
 
 const BodyWrapper = styled.div`
@@ -126,7 +128,18 @@ const Menu: React.FC<NavProps> = ({
           />
           <HeaderMenu isPushed={isPushed} links={links} />
           <Flex>
-            <UserBlock account={account} login={login} logout={logout} />
+            <PanelFooter 
+              hideBorder
+              isPushed={isPushed}
+              isDark={isDark}
+              toggleTheme={toggleTheme}
+              langs={langs}
+              setLang={setLang}
+              currentLang={currentLang}
+              cakePriceUsd={cakePriceUsd}
+              pushNav={setIsPushed}
+              links={links}
+              priceLink={priceLink} />
             {profile && <Avatar profile={profile} />}
           </Flex>
         </NavWrapper>
@@ -146,6 +159,7 @@ const Menu: React.FC<NavProps> = ({
           links={links}
           priceLink={priceLink}
         />
+        <UserBlock account={account} login={login} logout={logout} />
         <Inner isPushed={isPushed} showMenu={showMenu}>
           {children}
         </Inner>

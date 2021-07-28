@@ -30,7 +30,7 @@ const HeaderMenu: React.FC<Props> = ({ isPushed, links }) => {
       {links.map((entry) => {
         const calloutClass = entry.calloutClass ? entry.calloutClass : undefined;
         return (
-          <MenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass}>
+          <MenuEntry key={entry.label} isActive={entry.href === location.pathname} className={calloutClass} hideShadow>
             <MenuLink href={entry.href}>
               <LinkLabel isPushed={isPushed}>{entry.label}</LinkLabel>
             </MenuLink>

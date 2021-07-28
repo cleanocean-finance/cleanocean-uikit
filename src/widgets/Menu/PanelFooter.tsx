@@ -13,16 +13,18 @@ import * as IconModule from "./icons";
 import { socials, MENU_ENTRY_HEIGHT } from "./config";
 import { PanelProps, PushedProps } from "./types";
 
-interface Props extends PanelProps, PushedProps {}
+interface Props extends PanelProps, PushedProps {
+  hideBorder?: boolean
+}
 
 const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 const { MoonIcon, SunIcon, LanguageIcon } = Icons;
 
-const Container = styled.div`
+const Container = styled.div<{ hideBorder?: boolean }>`
   flex: none;
   padding: 8px 4px;
-  background-color: ${({ theme }) => theme.nav.background};
-  border-top: solid 2px rgba(133, 133, 133, 0.1);
+  background-color: ${({ hideBorder, theme }) => hideBorder ? "none" : theme.nav.background};
+  border-top: ${({ hideBorder }) => hideBorder ? "none" : "solid 2px rgba(133, 133, 133, 0.1)"};
 
   ${({ theme }) => theme.mediaQueries.nav} {
     padding: 0;
