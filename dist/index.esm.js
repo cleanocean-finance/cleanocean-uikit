@@ -2357,7 +2357,10 @@ var templateObject_1$B;
 
 var Icons$1 = IconModule;
 Icons$1.MoonIcon; Icons$1.SunIcon; Icons$1.LanguageIcon;
-var Container$4 = styled.div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex: none;\n  padding: 8px 4px;\n  background-color: ", ";\n  border-top: ", ";\n\n  ", " {\n    padding: 0;\n    overflow-x: hidden;\n  }\n"], ["\n  flex: none;\n  padding: 8px 4px;\n  background-color: ", ";\n  border-top: ", ";\n\n  ", " {\n    padding: 0;\n    overflow-x: hidden;\n  }\n"])), function (_a) {
+var Container$4 = styled.div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex: none;\n  padding: 8px 4px;\n  width: ", ";\n  background-color: ", ";\n  border-top: ", ";\n\n  ", " {\n    padding: 0;\n    overflow-x: hidden;\n  }\n"], ["\n  flex: none;\n  padding: 8px 4px;\n  width: ", ";\n  background-color: ", ";\n  border-top: ", ";\n\n  ", " {\n    padding: 0;\n    overflow-x: hidden;\n  }\n"])), function (_a) {
+    var hideBorder = _a.hideBorder;
+    return hideBorder ? "200px" : "100%";
+}, function (_a) {
     var hideBorder = _a.hideBorder, theme = _a.theme;
     return hideBorder ? "none" : theme.nav.background;
 }, function (_a) {
@@ -2368,16 +2371,15 @@ var Container$4 = styled.div(templateObject_1$C || (templateObject_1$C = __makeT
     return theme.mediaQueries.nav;
 });
 var PriceLink = styled.a(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
-styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"])), MENU_ENTRY_HEIGHT);
-var SocialEntry = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
+var SocialEntry = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
 var PanelFooter = function (_a) {
-    var isPushed = _a.isPushed, pushNav = _a.pushNav; _a.toggleTheme; _a.isDark; var cakePriceUsd = _a.cakePriceUsd; _a.currentLang; _a.langs; _a.setLang; var priceLink = _a.priceLink;
-    if (!isPushed) {
+    var isPushed = _a.isPushed, pushNav = _a.pushNav, cakePriceUsd = _a.cakePriceUsd, priceLink = _a.priceLink, hideBorder = _a.hideBorder;
+    if (!isPushed && !hideBorder) {
         return (React.createElement(Container$4, null,
             React.createElement(IconButton, { variant: "text", onClick: function () { return pushNav(true); } },
                 React.createElement(Icon$l, null))));
     }
-    return (React.createElement(Container$4, null,
+    return (React.createElement(Container$4, { hideBorder: true },
         React.createElement(SocialEntry, null,
             cakePriceUsd ? (React.createElement(PriceLink, { href: priceLink, target: "_blank" },
                 React.createElement(Icon$v, { width: "24px", mr: "8px" }),
@@ -2390,7 +2392,7 @@ var PanelFooter = function (_a) {
                     React.createElement(Icon, __assign({}, iconProps))));
             })))));
 };
-var templateObject_1$C, templateObject_2$d, templateObject_3$7, templateObject_4$2;
+var templateObject_1$C, templateObject_2$d, templateObject_3$7;
 
 var StyledPanel = styled.div(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  position: fixed;\n  padding-top: ", ";\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", ";\n  height: 100vh;\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    width: 0;\n  }\n"], ["\n  position: fixed;\n  padding-top: ", ";\n  top: 0;\n  left: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  flex-shrink: 0;\n  background-color: ", ";\n  width: ", ";\n  height: 100vh;\n  transition: padding-top 0.2s, width 0.2s;\n  border-right: ", ";\n  z-index: 11;\n  overflow: ", ";\n  transform: translate3d(0, 0, 0);\n\n  ", " {\n    width: 0;\n  }\n"])), function (_a) {
     var showMenu = _a.showMenu;
@@ -2679,8 +2681,8 @@ var StyledNav = styled.nav(templateObject_2$g || (templateObject_2$g = __makeTem
     var theme = _a.theme;
     return theme.nav.background;
 });
-var NavWrapper = styled.div(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  max-width: 1600px;\n  width: 100%;\n  margin: auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n"], ["\n  max-width: 1600px;\n  width: 100%;\n  margin: auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n"])));
-var BodyWrapper = styled.div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
+var NavWrapper = styled.div(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  max-width: 1600px;\n  width: 100%;\n  height: 100%;\n  margin: auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n"], ["\n  max-width: 1600px;\n  width: 100%;\n  height: 100%;\n  margin: auto;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding-left: 8px;\n  padding-right: 16px;\n"])));
+var BodyWrapper = styled.div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
 var Inner = styled.div(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"], ["\n  flex-grow: 1;\n  margin-top: ", ";\n  transition: margin-top 0.2s;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? MENU_HEIGHT + "px" : 0);
@@ -2741,7 +2743,7 @@ var Menu = function (_a) {
             React.createElement(Inner, { isPushed: isPushed, showMenu: showMenu }, children),
             React.createElement(MobileOnlyOverlay, { show: isPushed, onClick: function () { return setIsPushed(false); }, role: "presentation" }))));
 };
-var templateObject_1$J, templateObject_2$g, templateObject_3$8, templateObject_4$3, templateObject_5$1, templateObject_6;
+var templateObject_1$J, templateObject_2$g, templateObject_3$8, templateObject_4$2, templateObject_5$1, templateObject_6;
 
 var ToastAction = function (_a) {
     var action = _a.action;

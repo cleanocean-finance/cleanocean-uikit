@@ -23,6 +23,7 @@ const { MoonIcon, SunIcon, LanguageIcon } = Icons;
 const Container = styled.div<{ hideBorder?: boolean }>`
   flex: none;
   padding: 8px 4px;
+  width: ${({ hideBorder }) => hideBorder ? "200px" : "100%"};
   background-color: ${({ hideBorder, theme }) => hideBorder ? "none" : theme.nav.background};
   border-top: ${({ hideBorder }) => hideBorder ? "none" : "solid 2px rgba(133, 133, 133, 0.1)"};
 
@@ -45,14 +46,6 @@ const PriceLink = styled.a`
   }
 `;
 
-const SettingsEntry = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: ${MENU_ENTRY_HEIGHT}px;
-  padding: 0 8px;
-`;
-
 const SocialEntry = styled.div`
   display: flex;
   align-items: center;
@@ -64,15 +57,11 @@ const SocialEntry = styled.div`
 const PanelFooter: React.FC<Props> = ({
   isPushed,
   pushNav,
-  toggleTheme,
-  isDark,
   cakePriceUsd,
-  currentLang,
-  langs,
-  setLang,
   priceLink,
+  hideBorder
 }) => {
-  if (!isPushed) {
+  if (!isPushed && !hideBorder) {
     return (
       <Container>
         <IconButton variant="text" onClick={() => pushNav(true)}>
@@ -83,7 +72,7 @@ const PanelFooter: React.FC<Props> = ({
   }
 
   return (
-    <Container>
+    <Container hideBorder>
       <SocialEntry>
         {cakePriceUsd ? (
           <PriceLink href={priceLink} target="_blank">

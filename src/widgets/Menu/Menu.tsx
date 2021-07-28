@@ -34,6 +34,7 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
 const NavWrapper = styled.div`
   max-width: 1600px;
   width: 100%;
+  height: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
