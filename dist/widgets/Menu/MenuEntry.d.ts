@@ -1,6 +1,7 @@
 import { DefaultTheme } from "styled-components";
 export interface Props {
     secondary?: boolean;
+    hideShadow?: boolean;
     isActive?: boolean;
     theme: DefaultTheme;
 }
