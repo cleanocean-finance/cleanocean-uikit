@@ -27,7 +27,6 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   align-items: center;
   padding-left: 8px;
   padding-right: 16px;
-  max-width: 1600px;
   width: 100%;
   height: ${MENU_HEIGHT}px;
   background-color: ${({ theme }) => theme.nav.background};
@@ -35,6 +34,11 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   z-index: 20;
   transform: translate3d(0, 0, 0);
 `;
+
+const NavWrapper = styled.div`
+  max-width: 1600px;
+  margin: auto;
+`
 
 const BodyWrapper = styled.div`
   position: relative;
@@ -113,17 +117,19 @@ const Menu: React.FC<NavProps> = ({
   return (
     <Wrapper>
       <StyledNav showMenu={showMenu}>
-        <Logo
-          isPushed={isPushed}
-          togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
-          isDark={isDark}
-          href={homeLink?.href ?? "/"}
-        />
-        <HeaderMenu isPushed={isPushed} links={links} />
-        <Flex>
-          <UserBlock account={account} login={login} logout={logout} />
-          {profile && <Avatar profile={profile} />}
-        </Flex>
+        <NavWrapper>
+          <Logo
+            isPushed={isPushed}
+            togglePush={() => setIsPushed((prevState: boolean) => !prevState)}
+            isDark={isDark}
+            href={homeLink?.href ?? "/"}
+          />
+          <HeaderMenu isPushed={isPushed} links={links} />
+          <Flex>
+            <UserBlock account={account} login={login} logout={logout} />
+            {profile && <Avatar profile={profile} />}
+          </Flex>
+        </NavWrapper>
       </StyledNav>
       <BodyWrapper>
         <Panel
