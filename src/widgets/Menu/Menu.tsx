@@ -8,8 +8,9 @@ import Logo from "./Logo";
 import Panel from "./Panel";
 import UserBlock from "./UserBlock";
 import { NavProps } from "./types";
-import { MENU_HEIGHT, SIDEBAR_WIDTH_REDUCED, SIDEBAR_WIDTH_FULL } from "./config";
+import { MENU_HEIGHT } from "./config";
 import Avatar from "./Avatar";
+import HeaderMenu from "./HeaderMenu";
 
 const Wrapper = styled.div`
   position: relative;
@@ -26,6 +27,7 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
   align-items: center;
   padding-left: 8px;
   padding-right: 16px;
+  max-width: 1600px;
   width: 100%;
   height: ${MENU_HEIGHT}px;
   background-color: ${({ theme }) => theme.nav.background};
@@ -117,6 +119,7 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
+        <HeaderMenu isPushed={isPushed} links={links} />
         <Flex>
           <UserBlock account={account} login={login} logout={logout} />
           {profile && <Avatar profile={profile} />}
