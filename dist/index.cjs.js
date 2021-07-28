@@ -355,8 +355,8 @@ var Icon$p = function (props) {
 };
 
 var Icon$q = function (props) {
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 640 537" }, props),
-        React__default['default'].createElement("image", { width: "640", height: "537", href: "/images/egg/logo.png" })));
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 256 256" }, props),
+        React__default['default'].createElement("image", { width: "256", height: "256", href: "/images/egg/logo.png" })));
 };
 
 var Icon$r = function (props) {
@@ -1893,8 +1893,8 @@ var Icon$R = function (props) {
 
 var Logo = function (_a) {
     var isDark = _a.isDark, props = __rest(_a, ["isDark"]);
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 640 112" }, props),
-        React__default['default'].createElement("image", { width: "640", height: "112", href: isDark ? '/images/egg/LogoTextNewDark.png' : '/images/egg/LogoTextNewWhite.png' })));
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 200 36" }, props),
+        React__default['default'].createElement("image", { width: "200", height: "36", href: isDark ? '/images/egg/LogoTextNewDark.png' : '/images/egg/LogoTextNewWhite.png' })));
 };
 
 var Icon$S = function (props) {
@@ -2101,7 +2101,7 @@ MenuButton.defaultProps = {
 };
 var templateObject_1$x;
 
-var StyledLink$1 = styled__default['default'](reactRouterDom.Link)(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 52px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 210px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 52px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 210px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"])), function (_a) {
+var StyledLink$1 = styled__default['default'](reactRouterDom.Link)(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 52px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 200px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 52px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 200px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 }, function (_a) {
@@ -2370,7 +2370,7 @@ var templateObject_1$B;
 
 var Icons$1 = IconModule;
 Icons$1.MoonIcon; Icons$1.SunIcon; Icons$1.LanguageIcon;
-var Container$4 = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex: none;\n  padding: 8px 4px;\n  width: 100%;\n  background-color: ", ";\n  border-top: ", ";\n\n  ", " {\n    padding: 0;\n    overflow-x: hidden;\n    width: 200px;\n  }\n"], ["\n  flex: none;\n  padding: 8px 4px;\n  width: 100%;\n  background-color: ", ";\n  border-top: ", ";\n\n  ", " {\n    padding: 0;\n    overflow-x: hidden;\n    width: 200px;\n  }\n"])), function (_a) {
+var Container$4 = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  flex: none;\n  padding: 8px 4px;\n  width: 100%;\n  background-color: ", ";\n  border-top: ", ";\n\n  ", " {\n    padding: 0;\n    overflow-x: hidden;\n    width: ", ";\n  }\n"], ["\n  flex: none;\n  padding: 8px 4px;\n  width: 100%;\n  background-color: ", ";\n  border-top: ", ";\n\n  ", " {\n    padding: 0;\n    overflow-x: hidden;\n    width: ", ";\n  }\n"])), function (_a) {
     var showOnNav = _a.showOnNav, theme = _a.theme;
     return showOnNav ? "none" : theme.nav.background;
 }, function (_a) {
@@ -2379,6 +2379,9 @@ var Container$4 = styled__default['default'].div(templateObject_1$C || (template
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
+}, function (_a) {
+    var showOnNav = _a.showOnNav; _a.theme;
+    return showOnNav ? "200px" : '100%';
 });
 var PriceLink = styled__default['default'].a(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
 var SocialEntry = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
@@ -2399,7 +2402,7 @@ var PanelFooter = function (_a) {
     return (React__default['default'].createElement(Container$4, { showOnNav: showOnNav },
         React__default['default'].createElement(SocialEntry, null,
             cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
-                React__default['default'].createElement(Icon$v, { width: "24px", mr: "8px" }),
+                React__default['default'].createElement(Icon$v, { width: "24px", height: "24px", mr: "8px" }),
                 React__default['default'].createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 })),
             React__default['default'].createElement(SocialWrapper, { showOnNav: showOnNav }, socials.map(function (social, index) {
                 var Icon = Icons$1[social.icon];
@@ -2869,7 +2872,7 @@ var brandColors = {
 var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", inputBorder: "#cccccc", tertiary: "#EFF4F5", text: "#452A7A", textDisabled: "#BDC2C4", textSubtle: "#278CC7", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#e9f1fd", background: "#1f2b46", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#0a0e17", input: "#483f3b", inputBorder: "#cccccc", primaryDark: "#278CC7", tertiary: "#2d2f37", text: "#FFFFFF", textDisabled: "#666171", textSubtle: "#000000", borderColor: "#524B63", card: "#121827", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#e9f1fd", background: "#1f2b46", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#0a0e17", input: "#483f3b", inputBorder: "#cccccc", primaryDark: "#278CC7", tertiary: "#2d2f37", text: "#FFFFFF", textDisabled: "#666171", textSubtle: "#000000", borderColor: "#524B63", card: "#B7C3D1", gradients: {
         bubblegum: "linear-gradient(139.73deg, #1f606f 0%, #164865 100%)",
     } });
 

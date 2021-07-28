@@ -30,7 +30,7 @@ const Container = styled.div<{ showOnNav?: boolean }>`
   ${({ theme }) => theme.mediaQueries.nav} {
     padding: 0;
     overflow-x: hidden;
-    width: 200px;
+    width: ${({ showOnNav, theme }) => showOnNav ? "200px" : '100%'};
   }
 `;
 
@@ -55,8 +55,8 @@ const SocialEntry = styled.div`
   padding: 0 16px;
 `;
 
-const SocialWrapper = styled(Flex)<{showOnNav?: boolean}>`
-  display: ${({showOnNav}) => showOnNav ? "none" : "flex"};
+const SocialWrapper = styled(Flex) <{ showOnNav?: boolean }>`
+  display: ${({ showOnNav }) => showOnNav ? "none" : "flex"};
 
   ${({ theme }) => theme.mediaQueries.nav} {
     display: flex;
@@ -85,7 +85,7 @@ const PanelFooter: React.FC<Props> = ({
       <SocialEntry>
         {cakePriceUsd ? (
           <PriceLink href={priceLink} target="_blank">
-            <PancakeRoundIcon width="24px" mr="8px" />
+            <PancakeRoundIcon width="24px" height="24px" mr="8px" />
             <Text color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
           </PriceLink>
         ) : (
