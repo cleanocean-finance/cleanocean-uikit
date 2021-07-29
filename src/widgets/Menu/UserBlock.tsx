@@ -27,7 +27,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, showMenu }) => {
       {account ? (
         <Button
           size="sm"
-          variant="tertiary"
+          variant="bright"
           onClick={() => {
             onPresentAccountModal();
           }}
@@ -37,11 +37,12 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, showMenu }) => {
       ) : (
         <Button
           size="sm"
+          variant="bright"
           onClick={() => {
             onPresentConnectModal();
           }}
         >
-          Connect
+          Connect your Wallet
         </Button>
       )}
     </Wrapper>

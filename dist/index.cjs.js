@@ -152,6 +152,7 @@ var variants = {
     DANGER: "danger",
     SUBTLE: "subtle",
     SUCCESS: "success",
+    BRIGHT: "bright",
 };
 
 var getDisabledStyles = function (_a) {
@@ -172,7 +173,7 @@ var getButtonVariantProp = function (prop) { return function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? variants.PRIMARY : _b;
     return theme.button[variant][prop];
 }; };
-var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
+var StyledButton = styled__default['default'].button(templateObject_1$2 || (templateObject_1$2 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 400;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  background-color: ", ";\n  border: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 400;\n  /* max-content instead of auto for Safari fix */\n  width: ", ";\n  height: ", ";\n  line-height: 1;\n  letter-spacing: 0.03em;\n  justify-content: center;\n  outline: 0;\n  padding: ", ";\n  transition: background-color 0.2s;\n  opacity: ", ";\n\n  &:hover:not(:disabled):not(.button--disabled):not(:active) {\n    background-color: ", ";\n    border-color: ", ";\n  }\n\n  &:focus:not(:active) {\n    box-shadow: 0 0 0 2px ", ";\n  }\n\n  &:active {\n    background-color: ", ";\n    box-shadow: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"])), getButtonVariantProp("background"), getButtonVariantProp("border"), getButtonVariantProp("boxShadow"), getButtonVariantProp("color"), function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "max-content");
 }, function (_a) {
@@ -2634,11 +2635,11 @@ var UserBlock = function (_a) {
     var account = _a.account, login = _a.login, logout = _a.logout, showMenu = _a.showMenu;
     var _b = useWalletModal(login, logout, account), onPresentConnectModal = _b.onPresentConnectModal, onPresentAccountModal = _b.onPresentAccountModal;
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
-    return (React__default['default'].createElement(Wrapper$1, { showMenu: showMenu }, account ? (React__default['default'].createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
+    return (React__default['default'].createElement(Wrapper$1, { showMenu: showMenu }, account ? (React__default['default'].createElement(Button, { size: "sm", variant: "bright", onClick: function () {
             onPresentAccountModal();
-        } }, accountEllipsis)) : (React__default['default'].createElement(Button, { size: "sm", onClick: function () {
+        } }, accountEllipsis)) : (React__default['default'].createElement(Button, { size: "sm", variant: "bright", onClick: function () {
             onPresentConnectModal();
-        } }, "Connect"))));
+        } }, "Connect your Wallet"))));
 };
 var templateObject_1$G;
 
@@ -2884,7 +2885,7 @@ var dark = {
 };
 
 var _a$2, _b;
-var PRIMARY = variants.PRIMARY, SECONDARY = variants.SECONDARY, TERTIARY = variants.TERTIARY, TEXT = variants.TEXT, DANGER = variants.DANGER, SUBTLE = variants.SUBTLE, SUCCESS = variants.SUCCESS;
+var PRIMARY = variants.PRIMARY, SECONDARY = variants.SECONDARY, TERTIARY = variants.TERTIARY, TEXT = variants.TEXT, DANGER = variants.DANGER, SUBTLE = variants.SUBTLE, SUCCESS = variants.SUCCESS, BRIGHT = variants.BRIGHT;
 var light$1 = (_a$2 = {},
     _a$2[PRIMARY] = {
         background: lightColors.primary,
@@ -2895,6 +2896,16 @@ var light$1 = (_a$2 = {},
         boxShadow: "inset 0px -1px 0px rgba(14, 14, 44, 0.4)",
         boxShadowActive: "inset 0px -1px 0px rgba(14, 14, 44, 0.4)",
         color: "#FFFFFF",
+    },
+    _a$2[BRIGHT] = {
+        background: "#FFFFFF",
+        backgroundActive: "#FFFFFF",
+        backgroundHover: "#cbcbcb",
+        border: 0,
+        borderColorHover: "currentColor",
+        boxShadow: "inset 0px -1px 0px rgba(14, 14, 44, 0.4)",
+        boxShadowActive: "inset 0px -1px 0px rgba(14, 14, 44, 0.4)",
+        color: "#000000",
     },
     _a$2[SECONDARY] = {
         background: "transparent",
@@ -2959,6 +2970,7 @@ var light$1 = (_a$2 = {},
     _a$2);
 var dark$1 = (_b = {},
     _b[PRIMARY] = __assign({}, light$1.primary),
+    _b[BRIGHT] = __assign({}, light$1.bright),
     _b[SECONDARY] = __assign({}, light$1.secondary),
     _b[TERTIARY] = __assign(__assign({}, light$1.tertiary), { background: darkColors.tertiary, backgroundActive: darkColors.tertiary, backgroundHover: darkColors.tertiary, color: darkColors.primary }),
     _b[TEXT] = __assign(__assign({}, light$1.text), { backgroundHover: darkColors.tertiary }),
