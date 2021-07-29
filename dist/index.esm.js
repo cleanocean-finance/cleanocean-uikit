@@ -2860,7 +2860,7 @@ var brandColors = {
 var lightColors = __assign(__assign(__assign({}, baseColors), brandColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", contrast: "#191326", invertedContrast: "#FFFFFF", input: "#eeeaf4", inputBorder: "#cccccc", tertiary: "#EFF4F5", text: "#452A7A", textDisabled: "#BDC2C4", textSubtle: "#278CC7", borderColor: "#E9EAEB", card: "#FFFFFF", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#e9f1fd", background: "#c0d6e8", backgroundDisabled: "#3c3742", contrast: "#FFFFFF", invertedContrast: "#ccc7c7", input: "#ccc7c7", inputBorder: "#cccccc", primaryDark: "#278CC7", tertiary: "#2d2f37", text: "#000000", textDisabled: "#666171", textSubtle: "#000000", borderColor: "#524B63", card: "#B2BDCC", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), brandColors), { secondary: "#e9f1fd", background: "#c0d6e8", backgroundDisabled: "#999", contrast: "#FFFFFF", invertedContrast: "#ccc7c7", input: "#ccc7c7", inputBorder: "#cccccc", primaryDark: "#278CC7", tertiary: "#2d2f37", text: "#000000", textDisabled: "#666171", textSubtle: "#000000", borderColor: "#524B63", card: "#B2BDCC", gradients: {
         bubblegum: "linear-gradient(139.73deg, #1f606f 0%, #164865 100%)",
     } });
 
@@ -2959,7 +2959,7 @@ var dark$1 = (_b = {},
     _b[PRIMARY] = __assign({}, light$1.primary),
     _b[BRIGHT] = __assign({}, light$1.bright),
     _b[SECONDARY] = __assign({}, light$1.secondary),
-    _b[TERTIARY] = __assign(__assign({}, light$1.tertiary), { background: darkColors.tertiary, backgroundActive: darkColors.tertiary, backgroundHover: darkColors.tertiary, color: darkColors.primary }),
+    _b[TERTIARY] = __assign(__assign({}, light$1.tertiary), { background: "#FFFFFF", backgroundActive: "#FFFFFF", backgroundHover: "#CBCBCB", border: "1px solid " + darkColors.tertiary, color: darkColors.primary }),
     _b[TEXT] = __assign(__assign({}, light$1.text), { backgroundHover: darkColors.tertiary }),
     _b[DANGER] = __assign({}, light$1.danger),
     _b[SUBTLE] = __assign({}, light$1.subtle),
