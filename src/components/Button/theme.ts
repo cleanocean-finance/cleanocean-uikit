@@ -101,7 +101,7 @@ export const dark: ButtonTheme = {
     background: "#FFFFFF",
     backgroundActive: "#FFFFFF",
     backgroundHover: "#CBCBCB",
-    border: `1px solid ${darkColors.tertiary}`,
+    border: `1px solid ${darkColors.primary}`,
     color: darkColors.primary,
   },
   [TEXT]: {
